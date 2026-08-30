@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0",
+  "experiment_id": "dlc-5-configurations-public-plan",
+  "synthetic": true,
+  "private_data_required": true,
+  "protocol": {
+    "annotation_count": 3181,
+    "training_count": 2324,
+    "validation_selection_count": 857,
+    "fixed_detector": "SSDLite",
+    "epochs": 35,
+    "batch_size": 1,
+    "seed": 42,
+    "pcutoff": 0.6,
+    "views_for_2d_stage": 156,
+    "trials_for_3d_stage": 78,
+    "selection_subject_groups": 3,
+    "selection_is_final_external_test": false
+  },
+  "functional_points": ["hip", "knee", "ankle", "foot"],
+  "models": [
+    {"id": "rtmpose-s", "family": "RTMPose-S", "role": "benchmark_member"},
+    {"id": "rtmpose-m", "family": "RTMPose-M", "role": "benchmark_member"},
+    {"id": "rtmpose-x", "family": "RTMPose-X", "role": "benchmark_member"},
+    {"id": "hrnet-w48", "family": "HRNet-W48", "role": "benchmark_member"},
+    {"id": "resnet-101", "family": "ResNet-101", "role": "benchmark_member"}
+  ],
+  "stages": [
+    "prepare_split",
+    "train_each_configuration",
+    "select_snapshot_on_declared_2d_validation",
+    "analyze_156_views",
+    "apply_common_dlt_contract",
+    "compare_78_trials",
+    "record_limitations"
+  ],
+  "public_note": "This plan exposes the benchmark protocol only; weights, labels, predictions and result tables remain private."
+}
+
