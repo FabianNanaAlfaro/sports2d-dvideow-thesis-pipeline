@@ -1,0 +1,10 @@
+# Optional, external runtimes. They are intentionally not installed in CI and
+# they are never committed to this repository with videos, weights or caches.
+mediapipe==0.10.21
+opencv-python>=4.8
+deeplabcut>=3.0
+
+# Sports2D is cited and invoked through its official package/repository. Keep
+# its version in the run manifest when reproducing an authorized experiment.
+sports2d
+

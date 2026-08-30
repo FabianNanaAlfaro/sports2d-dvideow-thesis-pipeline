@@ -1,0 +1,11 @@
+{
+  "schema_version": "1.0",
+  "image_size_px": [848, 480],
+  "entries": {
+    "CAM_1:right": {"x": 263, "y": 80, "width": 304, "height": 186, "padding": 0.25, "scale": 6},
+    "CAM_1:left": {"x": 315, "y": 113, "width": 291, "height": 195, "padding": 0.25, "scale": 6},
+    "CAM_2:right": {"x": 292, "y": 98, "width": 201, "height": 165, "padding": 0.25, "scale": 8},
+    "CAM_2:left": {"x": 440, "y": 88, "width": 189, "height": 170, "padding": 0.40, "scale": 8}
+  },
+  "public_note": "ROI geometry is a method template. It contains no participant identifiers, frames or results."
+}

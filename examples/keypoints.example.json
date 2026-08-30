@@ -1,0 +1,14 @@
+{
+  "trial_id": "trial-demo-001",
+  "side": "right",
+  "camera_role": "CAM_1",
+  "frame_index": 0,
+  "route": "synthetic",
+  "keypoints": {
+    "RHip": {"x_px": 100.0, "y_px": 120.0, "likelihood": 0.99},
+    "RKnee": {"x_px": 105.0, "y_px": 180.0, "likelihood": 0.98},
+    "RAnkle": {"x_px": 110.0, "y_px": 250.0, "likelihood": 0.97},
+    "RBigToe": {"x_px": 135.0, "y_px": 270.0, "likelihood": 0.96}
+  }
+}
+

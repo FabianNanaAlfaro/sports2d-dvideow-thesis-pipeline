@@ -1,0 +1,3 @@
+# Lightweight numerical core used by the public DLT/normalization examples.
+numpy>=1.26,<3
+
