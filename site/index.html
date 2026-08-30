@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explorador interactivo del pipeline de tesis Sports2D, DVIDEOW, MediaPipe y DeepLabCut.">
+  <meta name="theme-color" content="#08111f">
+  <title>Sports2D × DVIDEOW · Thesis pipeline</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#explorer">Saltar al explorador</a>
+
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="Inicio del pipeline">
+      <span class="brand-mark" aria-hidden="true">S<span>2</span>D</span>
+      <span>thesis pipeline</span>
+    </a>
+    <nav aria-label="Navegación principal">
+      <a href="#explorer">Pipeline</a>
+      <a href="#perimeter">Frontera pública</a>
+      <a href="#evidence">Evidencia</a>
+      <a class="nav-github" href="https://github.com/FabianNanaAlfaro/sports2d-dvideow-thesis-pipeline">GitHub ↗</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero shell" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="pulse"></span> PUBLIC RESEARCH COMPANION · v0.1.0</p>
+        <h1 id="hero-title">Del video al análisis biomecánico, con cada decisión a la vista.</h1>
+        <p class="hero-lead">Una guía visual e interactiva de la tesis sobre análisis markerless del pateo en futsal: referencia manual DVIDEOW, Sports2D, MediaPipe, DeepLabCut, reconstrucción DLT y validación.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#explorer">Explorar el pipeline <span aria-hidden="true">↓</span></a>
+          <a class="button ghost" href="https://github.com/FabianNanaAlfaro/sports2d-dvideow-thesis-pipeline">Ver repositorio <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+      <div class="hero-art" aria-label="Diagrama resumido del flujo de investigación">
+        <div class="art-glow"></div>
+        <img src="assets/pipeline-overview.svg" alt="Flujo desde la pregunta de investigación hasta la liberación pública" width="760" height="560">
+      </div>
+    </section>
+
+    <section class="stat-strip shell" aria-label="Resumen del proyecto">
+      <div><strong>2D → 3D</strong><span>funnel común</span></div>
+      <div><strong>4 rutas</strong><span>manual + markerless</span></div>
+      <div><strong>240 Hz</strong><span>contexto experimental</span></div>
+      <div><strong>0 datos</strong><span>participantes no publicados</span></div>
+    </section>
+
+    <section id="explorer" class="section shell" aria-labelledby="explorer-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">01 · EXPLORER</p>
+          <h2 id="explorer-title">El pipeline, etapa por etapa.</h2>
+        </div>
+        <p class="section-note">Selecciona una tarjeta. Aquí se explica el método; los datos y resultados permanecen fuera.</p>
+      </div>
+      <div class="explorer-layout">
+        <div id="stage-list" class="stage-list" role="list" aria-label="Etapas del pipeline"></div>
+        <article id="stage-detail" class="stage-detail" aria-live="polite"></article>
+      </div>
+      <noscript><p class="noscript">Activa JavaScript para abrir las tarjetas interactivas. La documentación completa está en <a href="https://github.com/FabianNanaAlfaro/sports2d-dvideow-thesis-pipeline/tree/main/docs">/docs</a>.</p></noscript>
+    </section>
+
+    <section id="perimeter" class="section section-tint" aria-labelledby="perimeter-title">
+      <div class="shell">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">02 · RELEASE DESIGN</p>
+            <h2 id="perimeter-title">Lo público termina antes de la observación humana.</h2>
+          </div>
+          <p class="section-note">El repositorio comparte contratos y criterio, no la base que los alimenta.</p>
+        </div>
+        <div class="perimeter-grid">
+          <div class="perimeter-card included">
+            <div class="card-icon">＋</div>
+            <h3>Sí entra</h3>
+            <ul>
+              <li>Pipeline completo y decisiones metodológicas</li>
+              <li>Manifiesto sintético y validadores ejecutables</li>
+              <li>Diagramas de proceso, colaboradores y fuentes públicas</li>
+              <li>DOI asignado y certificado de presentación</li>
+            </ul>
+          </div>
+          <div class="perimeter-card excluded">
+            <div class="card-icon">−</div>
+            <h3>No entra</h3>
+            <ul>
+              <li>Base de datos, videos, coordenadas y calibraciones</li>
+              <li>Software ejecutable, pesos, snapshots y cachés</li>
+              <li>Tablas, gráficos o imágenes de resultados</li>
+              <li>Proof de revista y documento de tesis</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="evidence" class="section shell" aria-labelledby="evidence-title">
+      <div class="evidence-layout">
+        <div>
+          <p class="eyebrow">03 · EVIDENCE</p>
+          <h2 id="evidence-title">La historia tiene rastro.</h2>
+          <p>El trabajo preliminar internacional se identifica con un DOI asignado, marcado aquí como <strong>en producción</strong>. El certificado oral de ISBS 2026 se conserva como evidencia documental; el proof no se publica.</p>
+          <div class="evidence-actions">
+            <a class="button primary" href="evidence/ISBS2026_oral_certificate.pdf">Abrir certificado PDF ↗</a>
+            <a class="text-link" href="https://doi.org/10.1080/14763141.2026.2680520">10.1080/14763141.2026.2680520 ↗</a>
+          </div>
+        </div>
+        <div class="evidence-stamp" aria-label="Certificado de presentación incluido">
+          <span class="stamp-ring">ISBS<br><b>2026</b></span>
+          <span class="stamp-label">ORAL<br>PRESENTATION</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer shell">
+    <div><span class="brand-mark small" aria-hidden="true">S<span>2</span>D</span> <span>Fabian A. Nana · public methodological companion</span></div>
+    <div class="footer-links"><a href="https://github.com/FabianNanaAlfaro/sports2d-dvideow-thesis-pipeline/blob/main/docs/contributors.md">Contributors</a><a href="https://github.com/FabianNanaAlfaro/sports2d-dvideow-thesis-pipeline/blob/main/docs/data-boundary.md">Data boundary</a><a href="https://github.com/FabianNanaAlfaro/sports2d-dvideow-thesis-pipeline/blob/main/CITATION.cff">Cite</a></div>
+  </footer>
+  <script src="app.js" defer></script>
+</body>
+</html>
+
