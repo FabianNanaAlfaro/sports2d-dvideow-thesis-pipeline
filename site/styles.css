@@ -17,7 +17,7 @@
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: clip; }
 body { margin: 0; color: var(--ink); background: radial-gradient(circle at 80% -10%, #173a56 0, transparent 34rem), var(--bg); line-height: 1.55; }
 a { color: inherit; }
 .shell { width: min(1180px, calc(100% - 48px)); margin-inline: auto; }
@@ -70,7 +70,7 @@ h3 { letter-spacing: -.025em; }
 .stage-name { font-size: 13px; font-weight: 750; }
 .stage-arrow { color: var(--muted-2); font-size: 18px; }
 .stage-detail { position: sticky; top: 20px; min-height: 390px; padding: 34px; border: 1px solid var(--line); border-radius: var(--radius); background: linear-gradient(145deg, rgba(18,36,58,.95), rgba(10,22,37,.95)); box-shadow: var(--shadow); overflow: hidden; }
-.stage-detail::after { content: ""; position: absolute; width: 270px; height: 270px; right: -110px; top: -100px; border-radius: 50%; background: radial-gradient(circle, rgba(103,215,237,.12), transparent 68%); pointer-events: none; }
+.stage-detail::after { content: ""; position: absolute; width: 220px; height: 220px; right: 0; top: 0; border-radius: 50%; background: radial-gradient(circle, rgba(103,215,237,.12), transparent 68%); pointer-events: none; }
 .detail-kicker { color: var(--mint); font-size: 11px; font-weight: 850; letter-spacing: .15em; }
 .detail-title { max-width: 600px; margin: 10px 0 14px; font-size: clamp(26px, 3vw, 39px); line-height: 1.08; letter-spacing: -.045em; }
 .detail-summary { max-width: 680px; color: var(--muted); font-size: 15px; }
@@ -136,4 +136,3 @@ button, a { outline-offset: 4px; }
   .footer { display: block; }
   .footer-links { margin-top: 16px; flex-wrap: wrap; }
 }
-

@@ -47,7 +47,8 @@ The central comparison is **2D agreement and 3D reconstruction against the manua
 3. [Public/private boundary](docs/data-boundary.md) — what is deliberately excluded.
 4. [Contributors and affiliations](docs/contributors.md) — roles, institutions and public profiles.
 5. [Publication and presentation evidence](docs/publication.md) — assigned DOI, related work and certificate.
-6. [Interactive pipeline explorer](https://fabiannanaalfaro.github.io/sports2d-dvideow-thesis-pipeline/) — a visual, responsive guide with no result data.
+6. [Public research brief](docs/research-brief.md) — scope, findings that can be stated safely and interpretation limits.
+7. [Interactive pipeline explorer](https://fabiannanaalfaro.github.io/sports2d-dvideow-thesis-pipeline/) — a visual, responsive guide with no result data.
 
 ## Reproducible, safe example
 
@@ -73,4 +74,3 @@ The research context brings together the Pontificia Universidad Católica del Pe
 ## License
 
 Original documentation, diagrams and small utility scripts are released under the MIT License. The ISBS certificate and institutional marks remain third-party materials; see [NOTICE.md](NOTICE.md).
-
