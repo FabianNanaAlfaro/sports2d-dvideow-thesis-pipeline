@@ -1,0 +1,58 @@
+cff-version: 1.2.0
+message: "If this public pipeline is useful, cite the repository and the related preliminary work separately."
+title: "Sports2D–DVIDEOW thesis pipeline"
+version: "0.1.0"
+date-released: 2026-08-30
+abstract: >-
+  Public methodological companion for a thesis on the implementation and
+  validation of markerless motion-analysis algorithms for futsal kicking
+  asymmetry. It documents a common funnel from synchronized 2D views through
+  DVIDEOW reference tracking, Sports2D, MediaPipe, DeepLabCut, DLT and
+  multi-level validation without redistributing private data or results.
+authors:
+  - family-names: "Nana Alfaro"
+    given-names: "Fabian Alcides"
+    orcid: "https://orcid.org/0009-0000-7881-1223"
+  - family-names: "Palucci Vieira"
+    given-names: "Luiz Henrique"
+    orcid: "https://orcid.org/0000-0001-6981-756X"
+  - family-names: "Beltrán Castañón"
+    given-names: "Cesar Armando"
+  - family-names: "Santiago"
+    given-names: "Paulo Roberto Pereira"
+    orcid: "https://orcid.org/0000-0002-9460-8847"
+  - family-names: "Bedo"
+    given-names: "Bruno Luiz de Souza"
+    orcid: "https://orcid.org/0000-0003-3821-2327"
+  - family-names: "Aquino"
+    given-names: "Rodrigo Leal de Queiroz Thomaz de"
+    orcid: "https://orcid.org/0000-0002-4885-7316"
+keywords:
+  - biomechanics
+  - futsal
+  - markerless motion capture
+  - Sports2D
+  - DVIDEOW
+  - DeepLabCut
+  - MediaPipe
+  - DLT
+license: MIT
+repository-code: "https://github.com/FabianNanaAlfaro/sports2d-dvideow-thesis-pipeline"
+url: "https://fabiannanaalfaro.github.io/sports2d-dvideow-thesis-pipeline/"
+references:
+  - type: article
+    authors:
+      - family-names: "Nana"
+        given-names: "Fabian A."
+      - family-names: "Santiago"
+        given-names: "Paulo R. P."
+      - family-names: "Bedo"
+        given-names: "Bruno L. S."
+      - family-names: "Aquino"
+        given-names: "Rodrigo"
+      - family-names: "Palucci Vieira"
+        given-names: "Luiz H."
+    title: "Preliminary analysis of markerless three-dimensional trajectory reconstruction during the futsal instep kicking using Sports2D"
+    year: 2026
+    doi: "10.1080/14763141.2026.2680520"
+
