@@ -1,0 +1,99 @@
+{
+  "schema_version": "1.0",
+  "project": {
+    "id": "sports2d-dvideow-thesis-pipeline",
+    "release": "0.1.0",
+    "kind": "public_method_companion"
+  },
+  "release": {
+    "synthetic": true,
+    "contains_participant_data": false,
+    "contains_frame_level_observations": false,
+    "contains_results": false,
+    "source_version": "public-contract-demo"
+  },
+  "study_design": {
+    "sampling_hz": 240,
+    "image_size_px": [848, 480],
+    "camera_roles": ["CAM_1", "CAM_2"],
+    "landmarks": ["hip", "knee", "ankle", "foot"],
+    "normalized_window_points": 101,
+    "window": "pre-impact-to-impact"
+  },
+  "stages": [
+    {
+      "id": "S00",
+      "name": "question_and_ethics",
+      "input_contract": "research_question",
+      "output_contract": "analysis_plan",
+      "public_boundary": "no consent records or participant information"
+    },
+    {
+      "id": "S01",
+      "name": "integrity_map",
+      "input_contract": "semantic_trial_camera_map",
+      "output_contract": "versioned_manifest",
+      "public_boundary": "synthetic identifiers only"
+    },
+    {
+      "id": "S02",
+      "name": "synchronized_views",
+      "input_contract": "two_camera_pair",
+      "output_contract": "anchored_frame_contract",
+      "public_boundary": "no videos or frame rows"
+    },
+    {
+      "id": "S03",
+      "name": "parallel_2d_routes",
+      "input_contract": "anchored_views",
+      "output_contract": "route_specific_2d_observations",
+      "public_boundary": "no tracking files, images or model artifacts"
+    },
+    {
+      "id": "S04",
+      "name": "homologation",
+      "input_contract": "route_specific_2d_observations",
+      "output_contract": "common_point_contract",
+      "public_boundary": "schema only"
+    },
+    {
+      "id": "S05",
+      "name": "common_dlt",
+      "input_contract": "paired_2d_points_and_calibration_ref",
+      "output_contract": "quality_checked_3d_contract",
+      "public_boundary": "calibration and 3d files withheld"
+    },
+    {
+      "id": "S06",
+      "name": "temporal_biomechanics",
+      "input_contract": "quality_checked_3d_contract",
+      "output_contract": "normalized_derived_variables",
+      "public_boundary": "no trajectories or participant-level variables"
+    },
+    {
+      "id": "S07",
+      "name": "validation_and_audit",
+      "input_contract": "declared_metric_plan",
+      "output_contract": "auditable_evaluation_record",
+      "public_boundary": "no result tables, plots or statistical exports"
+    },
+    {
+      "id": "S08",
+      "name": "public_release",
+      "input_contract": "reviewed_public_tree",
+      "output_contract": "repository_and_interactive_guide",
+      "public_boundary": "release-audit must pass"
+    }
+  ],
+  "example_trial": {
+    "trial_id": "trial-demo-001",
+    "side": "right",
+    "impact_frame": "symbolic-anchor",
+    "views": [
+      {"camera_role": "CAM_1", "view_id": "view-demo-a"},
+      {"camera_role": "CAM_2", "view_id": "view-demo-b"}
+    ],
+    "route_outputs": ["dvideow_manual", "sports2d", "mediapipe", "deeplabcut"]
+  }
+}
+

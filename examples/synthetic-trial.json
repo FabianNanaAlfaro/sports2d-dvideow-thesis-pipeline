@@ -1,0 +1,27 @@
+{
+  "trial_id": "trial-demo-001",
+  "synthetic": true,
+  "camera_pair": ["CAM_1", "CAM_2"],
+  "frame_contract": {
+    "video_row_base": 0,
+    "dvideow_dat_frame_base": 1,
+    "three_d_frame_relation": "dat_frame_plus_one"
+  },
+  "landmark_contract": ["hip", "knee", "ankle", "foot"],
+  "observation_schema": {
+    "required_fields": [
+      "trial_id",
+      "side",
+      "camera_role",
+      "route",
+      "frame_index",
+      "landmark",
+      "x_px",
+      "y_px",
+      "likelihood",
+      "valid"
+    ],
+    "missingness": "null_or_explicit_invalid; never zero-fill"
+  }
+}
+
