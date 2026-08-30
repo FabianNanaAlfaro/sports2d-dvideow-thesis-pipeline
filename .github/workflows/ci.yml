@@ -19,10 +19,33 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
+      - name: Install public numerical dependencies
+        run: python -m pip install -r requirements.txt
       - name: Validate synthetic manifest
         run: python src/validate_manifest.py examples/manifest.example.json
       - name: Audit public tree
         run: python src/audit_public_release.py .
-      - name: Compile utilities
-        run: python -m py_compile src/validate_manifest.py src/audit_public_release.py
-
+      - name: Run numerical and schema tests
+        run: python -m unittest discover -s tests -v
+      - name: Run synthetic DLT smoke test
+        run: python src/reconstruct_json.py examples/dlt-input.example.json
+      - name: Validate five-model benchmark plan
+        run: python src/dlc_benchmark_plan.py --config configs/dlc_benchmark.example.json
+      - name: Derive synthetic kinematics
+        run: python src/derive_biomechanics.py examples/biomechanics-input.example.json
+      - name: Compile public utilities
+        run: >-
+          python -m py_compile
+          src/validate_manifest.py
+          src/audit_public_release.py
+          src/dlt.py
+          src/quality_gate.py
+          src/biomechanics.py
+          src/derive_biomechanics.py
+          src/homologate.py
+          src/normalize_window.py
+          src/reconstruct_json.py
+          src/run_dlc.py
+          src/run_mediapipe.py
+          src/run_sports2d.py
+          src/dlc_benchmark_plan.py
