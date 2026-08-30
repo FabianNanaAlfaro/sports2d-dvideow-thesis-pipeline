@@ -80,6 +80,32 @@ h3 { letter-spacing: -.025em; }
 .detail-cell p { margin: 0; color: var(--ink); font-size: 13px; line-height: 1.45; }
 .detail-link { position: relative; z-index: 2; display: inline-block; margin-top: 25px; color: var(--cyan); font-size: 13px; font-weight: 800; text-decoration: none; }
 .noscript { padding: 18px; border: 1px solid var(--amber); border-radius: 13px; color: var(--amber); }
+.model-layout { display: grid; grid-template-columns: 1.08fr .92fr; gap: 34px; align-items: center; }
+.model-figure { min-width: 0; margin: 0; padding: 13px; border: 1px solid var(--line); border-radius: var(--radius); background: #0b1829; box-shadow: var(--shadow); }
+.model-figure img { display: block; width: 100%; height: auto; border-radius: 14px; }
+.model-figure figcaption { padding: 13px 7px 3px; color: var(--muted-2); font-size: 11px; }
+.model-copy { min-width: 0; }
+.model-copy h3 { max-width: 510px; margin-bottom: 15px; font-size: clamp(26px, 3vw, 39px); line-height: 1.08; letter-spacing: -.045em; }
+.model-copy > p:not(.eyebrow) { color: var(--muted); font-size: 14px; }
+code { color: var(--mint); font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace; font-size: .9em; }
+pre { max-width: 100%; margin: 24px 0 12px; padding: 17px; overflow-x: auto; border: 1px solid rgba(103,215,237,.2); border-radius: 14px; background: #07121f; color: var(--cyan); font: 11px/1.65 "SFMono-Regular", Consolas, "Liberation Mono", monospace; }
+pre code { color: inherit; white-space: pre; }
+.code-note { color: var(--muted-2) !important; font-size: 11px !important; }
+.source-links { display: flex; flex-wrap: wrap; gap: 10px 16px; margin-top: 22px; }
+.source-links a { color: var(--cyan); font-size: 12px; font-weight: 800; text-decoration: none; }
+.source-links a:hover, .source-links a:focus-visible { color: var(--amber); }
+.benchmark-strip { display: flex; justify-content: space-between; gap: 25px; align-items: center; margin-top: 28px; padding: 19px 22px; border: 1px solid rgba(158,230,188,.24); border-radius: 18px; background: linear-gradient(100deg, rgba(158,230,188,.08), rgba(103,215,237,.04)); }
+.benchmark-strip > div { min-width: 0; }
+.benchmark-strip strong, .benchmark-strip span { display: block; }
+.benchmark-strip strong { margin: 4px 0; font-size: 17px; letter-spacing: -.02em; }
+.benchmark-strip span:last-child { color: var(--muted); font-size: 12px; }
+.benchmark-label { color: var(--mint); font-size: 10px; font-weight: 850; letter-spacing: .14em; }
+.command-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 18px; }
+.command-card { min-width: 0; padding: 22px; border: 1px solid var(--line); border-radius: 18px; background: rgba(8, 18, 31, .58); }
+.command-card h3 { margin: 7px 0 9px; font-size: 18px; letter-spacing: -.025em; }
+.command-card p { min-height: 40px; color: var(--muted); font-size: 12px; line-height: 1.55; }
+.command-index { color: var(--cyan); font-size: 10px; font-weight: 850; letter-spacing: .13em; }
+.command-card pre { margin: 15px 0 0; padding: 13px; font-size: 10px; }
 .perimeter-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
 .perimeter-card { padding: 29px; border: 1px solid var(--line); border-radius: var(--radius); }
 .perimeter-card.included { background: linear-gradient(145deg, rgba(72, 146, 132, .14), rgba(14, 27, 45, .4)); }
@@ -108,6 +134,7 @@ button, a { outline-offset: 4px; }
   .hero-art { min-height: 330px; margin-top: -12px; }
   .explorer-layout { grid-template-columns: 1fr; }
   .stage-detail { position: static; }
+  .model-layout { grid-template-columns: 1fr; }
   .section-heading { display: block; }
   .section-note { margin-top: 16px; }
   .evidence-layout { gap: 35px; }
@@ -130,6 +157,9 @@ button, a { outline-offset: 4px; }
   .section { padding: 72px 0; }
   .stage-detail { padding: 25px 20px; }
   .detail-grid { grid-template-columns: 1fr; }
+  .benchmark-strip { display: block; }
+  .benchmark-strip .button { margin-top: 16px; }
+  .command-grid { grid-template-columns: 1fr; }
   .perimeter-grid { grid-template-columns: 1fr; }
   .evidence-layout { grid-template-columns: 1fr; padding: 25px 20px; }
   .evidence-stamp { width: min(220px, 100%); margin-inline: auto; }

@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 680" role="img" aria-labelledby="title desc">
+  <title id="title">Halpe-26 body keypoint schematic</title>
+  <desc id="desc">Original schematic of the 26 body keypoints used by the Body with feet Sports2D model, with a lower-limb subset highlighted.</desc>
+  <defs>
+    <linearGradient id="canvas" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#102840"/>
+      <stop offset="1" stop-color="#0a1728"/>
+    </linearGradient>
+    <linearGradient id="body" x1="0" x2="1">
+      <stop offset="0" stop-color="#67d7ed"/>
+      <stop offset="1" stop-color="#9ee6bc"/>
+    </linearGradient>
+    <filter id="soft" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#000" flood-opacity=".25"/>
+    </filter>
+  </defs>
+  <rect width="1080" height="680" rx="28" fill="url(#canvas)"/>
+  <text x="42" y="47" fill="#67d7ed" font-family="Arial, sans-serif" font-size="12" font-weight="700" letter-spacing="2.5">MODEL CARD / BODY_WITH_FEET</text>
+  <text x="42" y="76" fill="#edf5ff" font-family="Arial, sans-serif" font-size="26" font-weight="700">Halpe-26</text>
+  <text x="42" y="99" fill="#95a9bf" font-family="Arial, sans-serif" font-size="12">Esquema original · puntos corporales · no es un resultado de tesis</text>
+
+  <g transform="translate(65 104)" filter="url(#soft)" fill="none" stroke="url(#body)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M250 114L250 190M185 215L250 190L315 215M185 215L130 305L95 400M315 215L370 305L405 400M205 348L295 348M205 348L190 460L175 565M295 348L310 460L325 565"/>
+    <path d="M175 565L145 600M175 565L170 612M175 565L205 597M325 565L295 597M325 565L330 612M325 565L355 600" stroke="#ffc978"/>
+    <circle cx="250" cy="92" r="46" stroke="#67d7ed"/>
+  </g>
+  <g transform="translate(65 104)" fill="#0c1a2b" stroke="#67d7ed" stroke-width="3">
+    <circle cx="250" cy="70" r="7"/><circle cx="235" cy="88" r="7"/><circle cx="265" cy="88" r="7"/><circle cx="220" cy="104" r="7"/><circle cx="280" cy="104" r="7"/>
+    <circle cx="250" cy="114" r="8"/><circle cx="250" cy="190" r="8"/>
+    <circle cx="185" cy="215" r="8"/><circle cx="315" cy="215" r="8"/><circle cx="130" cy="305" r="8"/><circle cx="370" cy="305" r="8"/><circle cx="95" cy="400" r="8"/><circle cx="405" cy="400" r="8"/>
+    <circle cx="205" cy="348" r="10" fill="#9ee6bc" stroke="#9ee6bc"/><circle cx="295" cy="348" r="10" fill="#9ee6bc" stroke="#9ee6bc"/><circle cx="250" cy="348" r="9" fill="#9ee6bc" stroke="#9ee6bc"/>
+    <circle cx="190" cy="460" r="10" fill="#9ee6bc" stroke="#9ee6bc"/><circle cx="310" cy="460" r="10" fill="#9ee6bc" stroke="#9ee6bc"/><circle cx="175" cy="565" r="10" fill="#9ee6bc" stroke="#9ee6bc"/><circle cx="325" cy="565" r="10" fill="#9ee6bc" stroke="#9ee6bc"/>
+    <circle cx="145" cy="600" r="8" fill="#ffc978" stroke="#ffc978"/><circle cx="170" cy="612" r="8" fill="#ffc978" stroke="#ffc978"/><circle cx="205" cy="597" r="8" fill="#ffc978" stroke="#ffc978"/><circle cx="295" cy="597" r="8" fill="#ffc978" stroke="#ffc978"/><circle cx="330" cy="612" r="8" fill="#ffc978" stroke="#ffc978"/><circle cx="355" cy="600" r="8" fill="#ffc978" stroke="#ffc978"/>
+  </g>
+  <g transform="translate(65 104)" fill="#edf5ff" font-family="Arial, sans-serif" font-size="10" font-weight="700">
+    <text x="261" y="66">0</text><text x="242" y="82">1</text><text x="270" y="82">2</text><text x="204" y="104">3</text><text x="286" y="104">4</text><text x="260" y="115">17</text><text x="260" y="190">18</text>
+    <text x="169" y="211">5</text><text x="320" y="211">6</text><text x="112" y="301">7</text><text x="377" y="301">8</text><text x="77" y="397">9</text><text x="412" y="397">10</text>
+    <text x="185" y="345">11</text><text x="300" y="345">12</text><text x="256" y="345">19</text><text x="169" y="458">13</text><text x="315" y="458">14</text><text x="153" y="563">15</text><text x="331" y="563">16</text>
+    <text x="126" y="603">24</text><text x="153" y="629">20</text><text x="209" y="600">22</text><text x="286" y="600">23</text><text x="336" y="629">21</text><text x="361" y="603">25</text>
+  </g>
+
+  <g transform="translate(570 123)" font-family="Arial, sans-serif">
+    <rect x="0" y="0" width="456" height="474" rx="20" fill="#0b1b2e" stroke="#1d3c56"/>
+    <text x="26" y="37" fill="#9ee6bc" font-size="11" font-weight="700" letter-spacing="1.6">INDEX · NAME</text>
+    <g fill="#edf5ff" font-size="12">
+      <text x="27" y="72">00  Nose</text><text x="27" y="96">01  LEye</text><text x="27" y="120">02  REye</text><text x="27" y="144">03  LEar</text><text x="27" y="168">04  REar</text><text x="27" y="192">05  LShoulder</text><text x="27" y="216">06  RShoulder</text><text x="27" y="240">07  LElbow</text><text x="27" y="264">08  RElbow</text><text x="27" y="288">09  LWrist</text><text x="27" y="312">10  RWrist</text><text x="27" y="336" fill="#9ee6bc">11  LHip</text><text x="27" y="360" fill="#9ee6bc">12  RHip</text>
+      <text x="242" y="72" fill="#9ee6bc">13  LKnee</text><text x="242" y="96" fill="#9ee6bc">14  RKnee</text><text x="242" y="120" fill="#9ee6bc">15  LAnkle</text><text x="242" y="144" fill="#9ee6bc">16  RAnkle</text><text x="242" y="168">17  Head</text><text x="242" y="192">18  Neck</text><text x="242" y="216" fill="#9ee6bc">19  Hip</text><text x="242" y="240" fill="#ffc978">20  LBigToe</text><text x="242" y="264" fill="#ffc978">21  RBigToe</text><text x="242" y="288" fill="#ffc978">22  LSmallToe</text><text x="242" y="312" fill="#ffc978">23  RSmallToe</text><text x="242" y="336" fill="#ffc978">24  LHeel</text><text x="242" y="360" fill="#ffc978">25  RHeel</text>
+    </g>
+    <line x1="26" y1="394" x2="430" y2="394" stroke="#1d3c56"/>
+    <circle cx="37" cy="424" r="6" fill="#9ee6bc"/><text x="53" y="428" fill="#95a9bf" font-size="11">subset funcional de miembro inferior</text>
+    <circle cx="37" cy="450" r="6" fill="#ffc978"/><text x="53" y="454" fill="#95a9bf" font-size="11">puntos de pie / contacto</text>
+  </g>
+  <text x="42" y="637" fill="#6e8198" font-family="Arial, sans-serif" font-size="11">Body_with_feet → HALPE_26 · nomenclatura basada en Halpe-FullBody / AlphaPose</text>
+</svg>
+

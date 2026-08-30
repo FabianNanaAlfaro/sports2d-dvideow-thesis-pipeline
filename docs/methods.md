@@ -53,7 +53,7 @@ The values above are synthetic. A real input must also declare its frame rate, i
 ### MediaPipe route card
 
 - Landmark model: MediaPipe Pose, 33 landmarks.
-- Region-of-interest coordinates are stored privately; the public contract stores only a transform identifier.
+- Region-of-interest coordinates are represented by a safe camera/side template; a real run records the selected transform and maps crop coordinates back to the full frame once.
 - Laterality candidates are compared against the manual temporal anchor in a small offset window.
 - Curation may include Hampel derivative screening, PCHIP for short gaps and Savitzky–Golay/acceleration checks.
 - Final route metadata preserves whether a point was observed, interpolated or rejected.
@@ -76,8 +76,14 @@ Public acceptance conditions:
 - the calibration reference exists in the private package;
 - the frame-base adapter is declared;
 - finite 3D values and reprojection checks pass the configured gate;
+- the executable [`quality_gate.py`](../src/quality_gate.py) records the accept/reject reason;
 - no manual coordinate is copied into an automated route;
 - every generated output points back to a manifest version.
+
+The public [`derive_biomechanics.py`](../src/derive_biomechanics.py) example
+implements the downstream finite-difference velocity, speed and joint-angle
+interfaces. It is a transparent contract utility, not a claim that synthetic
+values reproduce the withheld thesis results.
 
 ## Temporal contract
 
@@ -101,4 +107,3 @@ Metric values, participant rows and result plots are intentionally not stored in
 ## Branch and version discipline
 
 The local work contains historical and current DLC experiments with different splits/configuration details. They must remain separate branches in provenance. A manifest must name its branch, source commit, model/config version and analysis window. The public repository therefore documents the distinction without publishing conflicting result tables as if they were one experiment.
-

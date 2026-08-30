@@ -3,6 +3,7 @@ data/
 private/
 raw/
 results/
+outputs/
 calibrations/
 weights/
 checkpoints/
@@ -54,4 +55,3 @@ work/
 !.env.example
 .idea/
 .vscode/
-

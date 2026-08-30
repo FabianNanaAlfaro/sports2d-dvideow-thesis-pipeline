@@ -39,3 +39,22 @@ These gates are intentionally expressed as questions. A real private run should 
 - Are collaborators credited with scoped roles and public links only?
 - Does the static guide render at desktop and mobile widths?
 
+## Executable public smoke test
+
+The repository-level smoke test is intentionally synthetic. It exercises the
+numerical contracts without opening a video, database, calibration, model or
+result file:
+
+```powershell
+python -m pip install -r requirements.txt
+python -m unittest discover -s tests -v
+python src/reconstruct_json.py examples/dlt-input.example.json
+python src/reconstruct_json.py examples/dlt-trajectory.example.json --max-reprojection-px 5
+python src/normalize_window.py examples/normalize-input.example.json --points 101
+python src/derive_biomechanics.py examples/biomechanics-input.example.json
+python src/dlc_benchmark_plan.py --config configs/dlc_benchmark.example.json
+```
+
+Optional adapters are separate from this gate. They run only after an
+authorized private environment is configured and default to dry-run where
+possible. Their generated outputs must be stored outside this repository.

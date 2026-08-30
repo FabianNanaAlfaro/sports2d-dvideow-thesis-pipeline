@@ -91,6 +91,8 @@ Route-specific curation is kept visible. After reconstruction and quality checks
 
 Filtering is not treated as a cosmetic step. Cutoff, order, sampling rate, interpolation policy and the source of every retained point belong in the manifest. The public example uses parameter labels only; it contains no trajectory values.
 
+The public engineering path for this stage is [`normalize_window.py`](../src/normalize_window.py) followed by [`derive_biomechanics.py`](../src/derive_biomechanics.py). The latter exposes finite-difference velocity, speed and joint-angle primitives with explicit `null` handling; it does not bundle or regenerate the private thesis trajectories.
+
 ## Stage 7 — validation and statistical audit
 
 The thesis separates several questions instead of relying on one score:
@@ -117,4 +119,3 @@ Before publication, the release process:
 6. records the commit that changed each public layer.
 
 The final repository is therefore a **pipeline companion**: reproducible at the level of contracts and checks, intentionally non-reproducible from the public tree alone at the level of human-subject observations.
-

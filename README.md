@@ -48,7 +48,10 @@ The central comparison is **2D agreement and 3D reconstruction against the manua
 4. [Contributors and affiliations](docs/contributors.md) — roles, institutions and public profiles.
 5. [Publication and presentation evidence](docs/publication.md) — assigned DOI, related work and certificate.
 6. [Public research brief](docs/research-brief.md) — scope, findings that can be stated safely and interpretation limits.
-7. [Interactive pipeline explorer](https://fabiannanaalfaro.github.io/sports2d-dvideow-thesis-pipeline/) — a visual, responsive guide with no result data.
+7. [Engineering quickstart](docs/code.md) — commands and adapters for authorized reruns.
+8. [Sports2D model card](docs/sports2d.md) — the exact `Body_with_feet` / Halpe-26 route and citation.
+9. [DeepLabCut benchmark](docs/deeplabcut-benchmark.md) — five configurations, protocol and runner.
+10. [Interactive pipeline explorer](https://fabiannanaalfaro.github.io/sports2d-dvideow-thesis-pipeline/) — a visual, responsive guide with no result data.
 
 ## Reproducible, safe example
 
@@ -60,6 +63,39 @@ python src/audit_public_release.py .
 ```
 
 Both checks use the standard Python library only. They do not look for, open or process the private thesis database.
+
+## Engineering kit
+
+The public tree now contains real, testable building blocks:
+
+```text
+configs/
+  sports2d.thesis.toml          # public route configuration template
+  mediapipe.roi.example.json    # camera/side ROI and crop-scale contract
+  dlc_benchmark.example.json    # five-model benchmark matrix
+src/
+  run_sports2d.py               # safe dry-run/execute wrapper
+  run_mediapipe.py              # ROI-aware 2D four-point extractor
+  homologate.py                 # route names → hip/knee/ankle/foot
+  dlt.py                        # explicit two-view SVD triangulation
+  quality_gate.py               # finite/reprojection acceptance decision
+  normalize_window.py           # valid curve → 101 points
+  biomechanics.py               # velocity, speed, angle and symmetry primitives
+  derive_biomechanics.py        # 3D contract → transparent derived variables
+  dlc_benchmark_plan.py         # expands/validates benchmark plan
+  run_dlc.py                    # safe optional DLC runner
+tests/                           # numerical + schema tests
+```
+
+The core smoke test runs without a video, database or model:
+
+```powershell
+python -m pip install -r requirements.txt
+python -m unittest discover -s tests -v
+python src/dlc_benchmark_plan.py --config configs/dlc_benchmark.example.json
+```
+
+For the pose-model definitions, this repository cites the official [Sports2D project by David Pagnon](https://github.com/davidpagnon/Sports2D) and the public [Halpe-26 keypoint definition](https://github.com/Fang-Haoshu/Halpe-FullBody). The diagram in the web guide is an original schematic, not a thesis result or a copied dataset image.
 
 ## Research status
 

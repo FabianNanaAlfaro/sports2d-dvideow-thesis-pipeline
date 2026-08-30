@@ -18,6 +18,7 @@
     </a>
     <nav aria-label="Navegación principal">
       <a href="#explorer">Pipeline</a>
+      <a href="#models">Modelos</a>
       <a href="#perimeter">Frontera pública</a>
       <a href="#evidence">Evidencia</a>
       <a class="nav-github" href="https://github.com/FabianNanaAlfaro/sports2d-dvideow-thesis-pipeline">GitHub ↗</a>
@@ -63,11 +64,77 @@
       <noscript><p class="noscript">Activa JavaScript para abrir las tarjetas interactivas. La documentación completa está en <a href="https://github.com/FabianNanaAlfaro/sports2d-dvideow-thesis-pipeline/tree/main/docs">/docs</a>.</p></noscript>
     </section>
 
+    <section id="models" class="section shell" aria-labelledby="models-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">02 · MODEL CARDS</p>
+          <h2 id="models-title">Aquí sí hay código.</h2>
+        </div>
+        <p class="section-note">Modelos upstream, configuración declarada y adaptadores listos para una rerun autorizada.</p>
+      </div>
+      <div class="model-layout">
+        <figure class="model-figure">
+          <img src="assets/halpe-26-keypoints.svg" alt="Esquema original de los 26 puntos corporales Halpe-26" width="1080" height="680">
+          <figcaption>Esquema vectorial original del contrato <code>Body_with_feet</code>. No es una imagen de resultados.</figcaption>
+        </figure>
+        <div class="model-copy">
+          <p class="eyebrow">SPORTS2D / HALPE-26</p>
+          <h3>La ruta markerless empieza con una configuración reproducible.</h3>
+          <p>El nombre correcto del proyecto es <strong>Sports2D</strong> y su autor público es David Pagnon. La plantilla de este repo usa <code>Body_with_feet</code> / Halpe-26, deja la salida en píxeles y entrega el control a la homologación y al DLT común.</p>
+          <pre><code>python src/run_sports2d.py \
+  --video $env:THESIS_PRIVATE_ROOT\videos\trial.mp4 \
+  --output-dir $env:THESIS_PRIVATE_ROOT\runs\sports2d \
+  --print-config</code></pre>
+          <p class="code-note">El comando es dry-run por defecto. Añade <code>--execute --keep-config</code> únicamente en tu entorno privado.</p>
+          <div class="source-links"><a href="https://github.com/davidpagnon/Sports2D">Sports2D ↗</a><a href="https://doi.org/10.21105/joss.06849">Pagnon &amp; Kim · JOSS ↗</a><a href="https://github.com/Fang-Haoshu/Halpe-FullBody">Halpe-FullBody ↗</a></div>
+        </div>
+      </div>
+      <div class="benchmark-strip">
+        <div><span class="benchmark-label">DLC BENCHMARK</span><strong>5 configuraciones</strong><span>RTMPose-S · RTMPose-M · RTMPose-X · HRNet-W48 · ResNet-101</span></div>
+        <a class="button ghost" href="https://github.com/FabianNanaAlfaro/sports2d-dvideow-thesis-pipeline/blob/main/docs/deeplabcut-benchmark.md">Ver protocolo DLC ↗</a>
+      </div>
+      <div class="command-grid" aria-label="Kit de comandos del pipeline">
+        <article class="command-card">
+          <span class="command-index">01 · 2D</span>
+          <h3>MediaPipe + ROI</h3>
+          <p>Recorta por cámara, devuelve a píxeles originales y deja la visibilidad explícita.</p>
+          <pre><code>python src/run_mediapipe.py \
+  --video path\to\private\trial.avi \
+  --camera-role CAM_1 \
+  --roi-config configs/mediapipe.roi.example.json</code></pre>
+        </article>
+        <article class="command-card">
+          <span class="command-index">02 · BENCH</span>
+          <h3>DeepLabCut</h3>
+          <p>Planifica las cinco configuraciones y ejecuta análisis autorizado sin publicar pesos.</p>
+          <pre><code>python src/run_dlc.py \
+  --action analyze \
+  --config-yaml path\to\private\config.yaml \
+  --output-dir path\to\private\runs\dlc</code></pre>
+        </article>
+        <article class="command-card">
+          <span class="command-index">03 · 3D</span>
+          <h3>DLT + quality gate</h3>
+          <p>Triangula una secuencia, calcula reproyección y conserva frames inválidos con razón.</p>
+          <pre><code>python src/reconstruct_json.py \
+  examples/dlt-trajectory.example.json \
+  --max-reprojection-px 5</code></pre>
+        </article>
+        <article class="command-card">
+          <span class="command-index">04 · DERIVED</span>
+          <h3>Cinemática</h3>
+          <p>Normaliza la ventana y deriva velocidad, rapidez y ángulos desde el contrato 3D.</p>
+          <pre><code>python src/derive_biomechanics.py \
+  examples/biomechanics-input.example.json</code></pre>
+        </article>
+      </div>
+    </section>
+
     <section id="perimeter" class="section section-tint" aria-labelledby="perimeter-title">
       <div class="shell">
         <div class="section-heading">
           <div>
-            <p class="eyebrow">02 · RELEASE DESIGN</p>
+            <p class="eyebrow">03 · RELEASE DESIGN</p>
             <h2 id="perimeter-title">Lo público termina antes de la observación humana.</h2>
           </div>
           <p class="section-note">El repositorio comparte contratos y criterio, no la base que los alimenta.</p>
@@ -100,7 +167,7 @@
     <section id="evidence" class="section shell" aria-labelledby="evidence-title">
       <div class="evidence-layout">
         <div>
-          <p class="eyebrow">03 · EVIDENCE</p>
+          <p class="eyebrow">04 · EVIDENCE</p>
           <h2 id="evidence-title">La historia tiene rastro.</h2>
           <p>El trabajo preliminar internacional se identifica con un DOI asignado, marcado aquí como <strong>en producción</strong>. El certificado oral de ISBS 2026 se conserva como evidencia documental; el proof no se publica.</p>
           <div class="evidence-actions">
@@ -123,4 +190,3 @@
   <script src="app.js" defer></script>
 </body>
 </html>
-
